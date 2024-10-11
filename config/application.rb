@@ -28,6 +28,6 @@ module ChatApp
       g.helper false
       g.test_framework false
     end
-    # ギットハブにローカルリポジトリを作成
+    # ギットハブにローカルリポジトリを作成。ファーストコメントをしてリモートリポジトリが完成してるか確認する。
   end
 end
