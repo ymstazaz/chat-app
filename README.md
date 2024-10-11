@@ -10,7 +10,8 @@
 | email              | string | null: false, unique: true |
 | encrypted_password | string | null: false |
 
-### Association　（関係性）
+### Association　
+<!-- 関係性 -->
 
 - has_many :room_users
 - has_many :rooms, through: :room_users
