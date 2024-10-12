@@ -1,2 +1,6 @@
-<h1>Messages#index</h1>
-<p>Find me in app/views/messages/index.html.erb</p>
+<div class="wrapper">
+  <%= render "side_bar" %>
+  <%# レンダーは分けた先を示す。 %>
+  <%# 部分点プレートの読み込みのため、ファイル名先頭の_や拡張子は不要。 %>
+  <%= render "main_chat" %>
+</div>
