@@ -1,6 +1,12 @@
 <div class="wrapper">
-  <%= render "side_bar" %>
+  <div class="side_bar" >
+    <%= render "side_bar" %>
   <%# レンダーは分けた先を示す。 %>
   <%# 部分点プレートの読み込みのため、ファイル名先頭の_や拡張子は不要。 %>
-  <%= render "main_chat" %>
+  </div>
+
+  <div class="chat">
+    <%= render "main_chat" %>
+  </div>
+
 </div>
