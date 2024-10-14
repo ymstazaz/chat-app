@@ -4,6 +4,9 @@ class RoomsController < ApplicationController
   end
 
   def index
+    Rails.logger.debug "Params: #{params.inspect}"
+    @message = Message.new
+    @room = Room.find(params[:room_id])
   end
 
   def create
