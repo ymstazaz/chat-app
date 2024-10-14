@@ -41,19 +41,17 @@ display: flex;
 overflow: scroll; /* スクロールを作成 */
 }
 
-.chat_room li{
+.room-name a{
   list-style-type: none; /* マーカーを非表示にする */
-}
-
-
-.chat_room a{
   color: white;
   display: flex;
   padding:20px 0 40px;
   text-decoration: none; /* 下線を消す */
   list-style-type: none; /* マーカーを非表示にする */
-
 }
+
+
+
 
 /* メインチャット組 */
 .chat{
