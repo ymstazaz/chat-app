@@ -1,16 +1,19 @@
 <div class="side-bar-header">
-  <div class="user_name">
+  <div class="header-name">
     <%= link_to current_user.name, edit_user_path(current_user) %>
     <%# ログイン中のユーザー名を表示し、ログイン中のユーザー画面（ユーザー編集）へ飛ぶ %>
   </div>
-  <div class="make_room">
-    <a href="#">チャットを作成する</a>
+  <div class="create-room">
+    <%= link_to "チャットを作成する", new_room_path %>
   </div>
 </div>
 
 <div class="rooms">
-  <ul class="chat_room">
-    <li><a href="#">techroom1</a></li>
-    <li><a href="#">techroom2</a></li>
-  </ul>
+  <% current_user.rooms.each do |room| %>
+    <div class="room">
+      <div class="room-name">
+        <a href="#"><%= room.name %></a>
+      </div>
+    </div>
+  <% end %>
 </div>
