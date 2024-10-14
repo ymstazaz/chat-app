@@ -1,9 +1,11 @@
 class RoomsController < ApplicationController
-  def new
-    @room = Room.new
-  end
 
   def index
+
+  end
+
+  def new
+    @room = Room.new
   end
 
   def create
@@ -11,15 +13,19 @@ class RoomsController < ApplicationController
     if @room.save
       redirect_to root_path
     else
-      render :new, status: :unprocessable_entity
+      render :new
     end
   end
-  #  create
-    # binding.pryフォームから送信されるパラムスを確認するためにビンディングプレイを記述（ローカルで開いたものをターミナルで確認テストするためのコード）
 
-    private
-#  ストロングパラメータを設定。（余計な物を保存しないように設定）
-    def room_params
-      params.require(:room).permit(:name, user_ids: [])
-    end
- end
+  def destroy
+    room = Room.find(params[:id])
+    room.destroy
+    redirect_to root_path
+  end
+
+  private
+
+  def room_params
+    params.require(:room).permit(:name, user_ids:[])
+  end
+end
