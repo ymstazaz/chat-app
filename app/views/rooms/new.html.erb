@@ -19,13 +19,12 @@
         <%# プルダウンの作成をセレクト要素（親）とオプション要素（子）でしてイーチでログインしているユーザーを選択できるようにする %>
         <%# また、ウェアノットで自分は選択しないように設定 %>
         <select name="room[user_ids][]">
-          <%# パラムスで扱えるようにパラメーターを送付（name="room[user_ids][]"） %>
           <option value="">チャットするユーザーを選択してください</option>
-            <% User.where.not(id: current_user.id).each do |user| %>
-              <option value=<%= user.id %>><%= user.name %></option>
-              <%# ユーザーオブジェクトからそのユーザーIDを取り出す（IDが１ならヴァリューが1になる） 画面にはユーザー名が表示%>
-            <% end %>
+          <% User.where.not(id: current_user.id).each do |user| %>
+            <option value=<%=user.id%>><%= user.name %></option>
+          <% end %>
         </select>
+        <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
       </div>
     </div>
     <div class='chat-room-form__field'>
