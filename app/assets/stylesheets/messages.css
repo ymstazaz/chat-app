@@ -13,13 +13,47 @@
 .side-bar-header{
   height: 100px;
   padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.user_name a{
+  font-size: 16px;
+  color: #FAFAFA;
+  text-decoration: none; /* 下線を消す */
+}
+
+.make_room a{
+  display: flex;
+  padding: 14px;
+  border: 1px solid lightblue;
+  font-size: 10px;
+  color: deepskyblue;
+  text-decoration: none; /* 下線を消す */
+}
+
 .rooms{
 background-color: #2F3E51;
 height: calc(100vh - 100px);
 padding: 0 20px;
+display: flex;
+overflow: scroll;
 }
 
+.chat_room li{
+  list-style-type: none; /* マーカーを非表示にする */
+}
+
+
+.chat_room a{
+  color: white;
+  display: flex;
+  padding:20px 0 40px;
+  text-decoration: none; /* 下線を消す */
+  list-style-type: none; /* マーカーを非表示にする */
+
+}
 
 /* メインチャット組 */
 .chat{
