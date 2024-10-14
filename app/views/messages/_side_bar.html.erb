@@ -1,9 +1,9 @@
 <div class="side-bar-header">
-  <div class="user_name">
+  <div class="header-name">
     <%= link_to current_user.name, edit_user_path(current_user) %>
     <%# ログイン中のユーザー名を表示し、ログイン中のユーザー画面（ユーザー編集）へ飛ぶ %>
   </div>
-  <div class="make_room">
+  <div class="create-room">
     <%= link_to "チャットを作成する", new_room_path %>
   </div>
 </div>
