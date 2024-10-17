@@ -1,5 +1,23 @@
-<div class='wrapper'>
-  <div class='side-bar'>
-    <%= render "messages/side_bar" %>
+<div class="wrapper">
+  <div class="side-bar">
+    <div class="side-bar-header">
+      <div class="header-name">
+        <%= link_to current_user.name, edit_user_path(current_user) %>
+        <%# ログイン中のユーザー名を表示し、ログイン中のユーザー画面（ユーザー編集）へ飛ぶ %>
+      </div>
+      <div class="create-room">
+        <%= link_to "チャットを作成する", new_room_path %>
+      </div>
+    </div>
+
+    <div class="rooms">
+      <% current_user.rooms.each do |room| %>
+        <div class="room">
+          <div class="room-name">
+            <%= link_to room.name, room_messages_path(room_id: room.id) %>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
